@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 
@@ -28,13 +27,13 @@ public class AddMock2Test {
     @Captor
     private ArgumentCaptor<Integer> captor;
     @Spy
-    List<String> spyList = new ArrayList<>();
+    final List<String> spyList = new ArrayList<>();
     @Mock
-    List<String> mockList = new ArrayList<>();
+    final List<String> mockList = new ArrayList<>();
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
     }
 
     @AfterEach

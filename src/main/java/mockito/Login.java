@@ -1,7 +1,7 @@
 package mockito;
 
 public class Login {
-    public WebService webService;
+    public final WebService webService;
     public boolean isLoggedIn;
 
     public Login(WebService webService) {
